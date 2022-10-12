@@ -5,11 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.e_patrakaar.databinding.FragmentHomeBinding
+import com.example.e_patrakaar.model.Collection
+import com.example.e_patrakaar.view.adapter.CityAdapter
+import com.example.e_patrakaar.view.adapter.RecommendedAdapter
+import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
 
 class HomeFragment : Fragment() {
 
-    private var binding: FragmentHomeBinding? = null
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var list: List<Collection>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,11 +25,31 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        return binding!!.root
+        return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        list = listOf(
+            Collection("one"),
+            Collection("two"),
+            Collection("three"),
+            Collection("four"),
+            Collection("five"),
+            Collection("six"),
+        )
+        binding.rvTrending.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
+        binding.rvTrending.adapter = TrendingNewsAdapter(this@HomeFragment, list)
+
+        binding.rvUpdates.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
+        binding.rvUpdates.adapter = CityAdapter(this@HomeFragment, list)
+
+        binding.rvRecommended.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
+        binding.rvRecommended.adapter = RecommendedAdapter(this@HomeFragment, list)
+
+        binding.rvChannels.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
+        binding.rvChannels.adapter = CityAdapter(this@HomeFragment, list)
+
     }
 }
