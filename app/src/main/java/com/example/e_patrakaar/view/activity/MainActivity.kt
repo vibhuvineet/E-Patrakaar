@@ -1,4 +1,4 @@
-package com.example.e_patrakaar
+package com.example.e_patrakaar.view.activity
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications, R.id.navigation_starred, R.id.navigation_profile
+                R.id.navigation_home,
+                R.id.navigation_dashboard,
+                R.id.navigation_notifications,
+                R.id.navigation_starred,
+                R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -1,4 +1,4 @@
-package com.example.e_patrakaar.ui.dashboard
+package com.example.e_patrakaar.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
