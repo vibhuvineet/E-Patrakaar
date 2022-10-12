@@ -5,18 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.e_patrakaar.databinding.FragmentHomeBinding
+import com.example.e_patrakaar.databinding.FragmentLeaderboardBinding
 
-class HomeFragment : Fragment() {
+class LeaderboardFragment : Fragment() {
 
-    private var binding: FragmentHomeBinding? = null
+    private var binding: FragmentLeaderboardBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding = FragmentLeaderboardBinding.inflate(inflater, container, false)
 
         return binding!!.root
     }
