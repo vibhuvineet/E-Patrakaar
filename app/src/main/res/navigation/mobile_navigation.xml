@@ -26,12 +26,12 @@
     <fragment
         android:id="@+id/navigation_starred"
         android:name="com.example.e_patrakaar.view.fragment.SavedFragment"
-        android:label="Collections"
+        android:label="Your Collections"
         tools:layout="@layout/fragment_saved" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.e_patrakaar.view.fragment.ProfileFragment"
-        android:label="Profile"
+        android:label="ABC-XYZ"
         tools:layout="@layout/fragment_profile" />
 </navigation>
