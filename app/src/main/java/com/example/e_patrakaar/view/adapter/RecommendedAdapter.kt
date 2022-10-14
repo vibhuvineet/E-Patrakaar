@@ -8,14 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.e_patrakaar.databinding.CustomRecommendedItemBinding
 import com.example.e_patrakaar.model.Collection
 
-class RecommendedAdapter(private val fragment: Fragment, private val list: List<Collection>): RecyclerView.Adapter<RecommendedAdapter.ViewHolder>() {
+class RecommendedAdapter(private val fragment: Fragment, private val list: List<Collection>) :
+    RecyclerView.Adapter<RecommendedAdapter.ViewHolder>() {
 
     class ViewHolder(view: CustomRecommendedItemBinding) : RecyclerView.ViewHolder(view.root) {
         val text: TextView = view.textView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(CustomRecommendedItemBinding.inflate(LayoutInflater.from(fragment.context), parent, false))
+        return ViewHolder(
+            CustomRecommendedItemBinding.inflate(
+                LayoutInflater.from(fragment.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
