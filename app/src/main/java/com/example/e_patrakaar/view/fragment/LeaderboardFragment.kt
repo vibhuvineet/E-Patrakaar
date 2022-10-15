@@ -37,6 +37,15 @@ class LeaderboardFragment : Fragment() {
                 1 -> {
                     tab.text = "Health"
                 }
+                2 -> {
+                    tab.text = "Entertainment"
+                }
+                3 -> {
+                    tab.text = "Science"
+                }
+                4 -> {
+                    tab.text = "Technology"
+                }
             }
         }.attach()
 

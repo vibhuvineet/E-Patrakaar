@@ -10,7 +10,7 @@ import com.example.e_patrakaar.view.fragment.SportsFragment
 class LeaderboardPagerViewAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
-        return 2
+        return 5
     }
 
     override fun createFragment(position: Int): Fragment {
