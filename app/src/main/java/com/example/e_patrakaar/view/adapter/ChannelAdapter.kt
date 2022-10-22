@@ -11,7 +11,7 @@ import com.example.e_patrakaar.databinding.CustomCityItemBinding
 import com.example.e_patrakaar.model.City
 import com.example.e_patrakaar.model.Collection
 
-class CityAdapter(private val fragment: Fragment, private val list: List<City>): RecyclerView.Adapter<CityAdapter.ViewHolder>() {
+class ChannelAdapter(private val fragment: Fragment, private val list: List<Collection>): RecyclerView.Adapter<ChannelAdapter.ViewHolder>() {
 
     class ViewHolder(view: CustomCityItemBinding) : RecyclerView.ViewHolder(view.root) {
         val text: TextView = view.textView
@@ -24,8 +24,7 @@ class CityAdapter(private val fragment: Fragment, private val list: List<City>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val city = list[position]
-        holder.text.text = city.name
-        Glide.with(fragment).load(city.image).circleCrop().into(holder.image)
+        holder.text.text = city.text
     }
 
     override fun getItemCount(): Int {

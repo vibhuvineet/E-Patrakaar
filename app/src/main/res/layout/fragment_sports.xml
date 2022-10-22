@@ -29,7 +29,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Date:"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
 
@@ -59,7 +59,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Date:"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
 
@@ -80,7 +80,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Top Five"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
@@ -94,7 +94,6 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="4dp" />
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,7 +101,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Recommended Teams"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
@@ -132,7 +131,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Date:"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
 
@@ -162,7 +161,7 @@
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
             android:text="Date:"
-            android:textColor="@color/black"
+            android:textColor="?android:textColorPrimary"
             android:textSize="14sp"
             tools:ignore="HardcodedText" />
 

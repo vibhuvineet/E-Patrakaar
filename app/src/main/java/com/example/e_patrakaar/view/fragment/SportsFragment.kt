@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.FragmentSportsBinding
 import com.example.e_patrakaar.model.Collection
+import com.example.e_patrakaar.view.adapter.ChannelAdapter
 import com.example.e_patrakaar.view.adapter.CityAdapter
 import com.example.e_patrakaar.view.adapter.RecommendedAdapter
 import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
@@ -52,7 +53,7 @@ class SportsFragment : Fragment() {
         binding.rvSports4.adapter = TrendingNewsAdapter(this@SportsFragment, list)
 
         binding.rvTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvTop.adapter = CityAdapter(this@SportsFragment, list)
+        binding.rvTop.adapter = ChannelAdapter(this@SportsFragment, list)
 
         binding.rvRecommendedTeam.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         binding.rvRecommendedTeam.adapter = RecommendedAdapter(this@SportsFragment, list)
