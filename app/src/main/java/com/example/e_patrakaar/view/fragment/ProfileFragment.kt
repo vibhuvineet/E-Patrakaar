@@ -57,22 +57,28 @@ class ProfileFragment : Fragment() {
         view.tvYourActivity.setOnClickListener {
             Toast.makeText(requireActivity(), "Your activity is accessed.", Toast.LENGTH_SHORT)
                 .show()
+            dialog.dismiss()
         }
         view.tvArchive.setOnClickListener {
             Toast.makeText(requireActivity(), "Archive is accessed.", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
         }
         view.tvPolicy.setOnClickListener {
             Toast.makeText(requireActivity(), "Privacy Policy is accessed.", Toast.LENGTH_SHORT)
                 .show()
+            dialog.dismiss()
         }
         view.tvHelp.setOnClickListener {
             Toast.makeText(requireActivity(), "Help is accessed.", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
         }
         view.tvTheme.setOnClickListener {
             Toast.makeText(requireActivity(), "Theme is accessed.", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
         }
         view.tvSettings.setOnClickListener {
             Toast.makeText(requireActivity(), "Settings is accessed.", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
         }
 
         dialog.setCancelable(true)
