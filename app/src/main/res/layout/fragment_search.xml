@@ -22,7 +22,7 @@
         app:boxStrokeWidthFocused="0dp"
         app:boxStrokeColor="#FFF"
         app:boxCornerRadiusTopStart="35dp"
-        app:endIconDrawable="@drawable/ic_baseline_search_24"
+        app:endIconDrawable="@drawable/search_outline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

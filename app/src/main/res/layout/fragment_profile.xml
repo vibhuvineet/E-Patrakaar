@@ -15,7 +15,7 @@
         android:id="@+id/ivImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/ic_baseline_person_24"
+        android:src="@drawable/my_account_filled"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="91dp"
         tools:ignore="ContentDescription" />
