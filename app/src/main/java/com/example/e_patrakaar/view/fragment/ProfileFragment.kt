@@ -96,6 +96,10 @@ class ProfileFragment : Fragment() {
             Toast.makeText(requireActivity(), "Settings is accessed.", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
+        view.tvLogout.setOnClickListener {
+            Toast.makeText(requireActivity(), "Logout is requested.", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
 
         dialog.setCancelable(true)
         dialog.setContentView(view.root)
