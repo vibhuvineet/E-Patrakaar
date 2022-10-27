@@ -4,30 +4,6 @@
     android:layout_width="match_parent"
     android:scrollbars="none"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragment.SavedFragment">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCollections"
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/mbAddCollection"
-        android:layout_marginVertical="20dp"
-        android:layout_width="200dp"
-        android:layout_gravity="center"
-        app:icon="@drawable/add_button"
-        app:iconGravity="textTop"
-        android:backgroundTint="@color/grey"
-        android:layout_height="200dp" />
-
-    </LinearLayout>
 
 </ScrollView>

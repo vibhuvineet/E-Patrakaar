@@ -20,7 +20,7 @@ class TrendingNewsAdapter(private val fragment: Fragment, private val list: List
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dish = list[position]
-        holder.text.text = dish.text
+        holder.text.text = dish.text1
     }
 
     override fun getItemCount(): Int {

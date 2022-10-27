@@ -7,15 +7,20 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.CustomBottomSheetBinding
 import com.example.e_patrakaar.databinding.FragmentProfileBinding
+import com.example.e_patrakaar.model.Collection
+import com.example.e_patrakaar.view.adapter.CollectionAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
+    private lateinit var list: List<Collection>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +35,17 @@ class ProfileFragment : Fragment() {
 
 
         Glide.with(requireActivity()).load(R.drawable.pic).circleCrop().into(binding.ivImage)
+
+        list = listOf(
+            Collection("Politics", "150 saved posts", R.drawable.pic),
+            Collection("Sports", "200 saved posts", R.drawable.home_outline),
+            Collection("Animals and Birds", "4 saved posts", R.drawable.pic),
+            Collection("National", "23 saved posts", R.drawable.home_outline),
+            Collection("International", "46 saved posts", R.drawable.archive),
+        )
+
+        binding.rvSaved.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvSaved.adapter = CollectionAdapter(this@ProfileFragment, list)
 
         val menuHost: MenuHost = requireActivity()
 
