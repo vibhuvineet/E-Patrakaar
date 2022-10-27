@@ -9,13 +9,21 @@
         android:id="@+id/navigation_home"
         android:name="com.example.e_patrakaar.view.fragment.main.HomeFragment"
         android:label="@string/title"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_expanded_news"
+            app:destination="@id/navigation_expanded_news" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_leaderboard"
         android:name="com.example.e_patrakaar.view.fragment.main.LeaderboardFragment"
         android:label="@string/title"
-        tools:layout="@layout/fragment_leaderboard" />
+        tools:layout="@layout/fragment_leaderboard" >
+        <action
+            android:id="@+id/action_navigation_leaderboard_to_navigation_expanded_news"
+            app:destination="@id/navigation_expanded_news" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
@@ -34,4 +42,10 @@
         android:name="com.example.e_patrakaar.view.fragment.main.ProfileFragment"
         android:label="My Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_expanded_news"
+        android:name="com.example.e_patrakaar.view.fragment.ui.ExpandedNewsFragment"
+        android:label="@string/title"
+        tools:layout="@layout/fragment_expanded_news" />
 </navigation>
