@@ -1,4 +1,4 @@
-package com.example.e_patrakaar.view.fragment
+package com.example.e_patrakaar.view.fragment.leaderboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.FragmentSportsBinding
 import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.adapter.ChannelAdapter
-import com.example.e_patrakaar.view.adapter.CityAdapter
 import com.example.e_patrakaar.view.adapter.RecommendedAdapter
 import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
 

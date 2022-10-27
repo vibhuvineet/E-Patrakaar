@@ -1,4 +1,4 @@
-package com.example.e_patrakaar.view.fragment
+package com.example.e_patrakaar.view.fragment.leaderboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.e_patrakaar.view.fragment
+package com.example.e_patrakaar.view.fragment.main
 
 import android.os.Bundle
 import android.view.*

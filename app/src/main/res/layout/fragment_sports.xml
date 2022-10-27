@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".view.fragment.SportsFragment">
+    tools:context=".view.fragment.leaderboard.SportsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
