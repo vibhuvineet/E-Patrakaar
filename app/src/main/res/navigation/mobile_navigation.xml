@@ -32,15 +32,15 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_starred"
-        android:name="com.example.e_patrakaar.view.fragment.main.SavedFragment"
-        android:label="Your Collections"
-        tools:layout="@layout/fragment_saved" />
+        android:id="@+id/navigation_notification"
+        android:name="com.example.e_patrakaar.view.fragment.main.NotificationFragment"
+        android:label="@string/title"
+        tools:layout="@layout/fragment_notification" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.e_patrakaar.view.fragment.main.ProfileFragment"
-        android:label="My Profile"
+        android:label=""
         tools:layout="@layout/fragment_profile" />
 
     <fragment

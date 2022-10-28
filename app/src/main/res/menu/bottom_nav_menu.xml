@@ -17,7 +17,7 @@
         android:title="" />
 
     <item
-        android:id="@+id/navigation_starred"
+        android:id="@+id/navigation_notification"
         android:icon="@drawable/notification_selector"
         android:title="" />
 

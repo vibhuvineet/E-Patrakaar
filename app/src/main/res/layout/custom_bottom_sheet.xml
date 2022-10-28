@@ -100,7 +100,7 @@
             android:textColor="?android:textColorPrimary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:drawableStartCompat="@drawable/setting"
+            app:drawableStartCompat="@drawable/ic_baseline_logout_24"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
