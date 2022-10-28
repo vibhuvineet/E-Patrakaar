@@ -12,8 +12,16 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="actionBarStyle">@font/el_messiri_semibold</item>
         <item name="android:fontFamily">@font/poppins</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat">
+        <item name="android:fontFamily">@font/el_messiri_semibold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.06</item>
     </style>
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:fontFamily">@font/poppins</item>

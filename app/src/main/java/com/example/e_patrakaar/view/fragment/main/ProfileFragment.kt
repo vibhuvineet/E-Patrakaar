@@ -7,7 +7,6 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
@@ -15,6 +14,7 @@ import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.CustomBottomSheetBinding
 import com.example.e_patrakaar.databinding.FragmentProfileBinding
 import com.example.e_patrakaar.model.Collection
+import com.example.e_patrakaar.view.activity.MainActivity
 import com.example.e_patrakaar.view.adapter.CollectionAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
@@ -66,7 +66,7 @@ class ProfileFragment : Fragment() {
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
-        findNavController().currentDestination?.label = binding.tvName.text
+        (activity as MainActivity).supportActionBar!!.title = binding.tvName.text
 
     }
 
