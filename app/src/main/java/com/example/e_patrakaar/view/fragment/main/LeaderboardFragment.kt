@@ -1,4 +1,4 @@
-package com.example.e_patrakaar.view.fragment
+package com.example.e_patrakaar.view.fragment.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,6 +36,15 @@ class LeaderboardFragment : Fragment() {
                 }
                 1 -> {
                     tab.text = "Health"
+                }
+                2 -> {
+                    tab.text = "Entertainment"
+                }
+                3 -> {
+                    tab.text = "Science"
+                }
+                4 -> {
+                    tab.text = "Technology"
                 }
             }
         }.attach()

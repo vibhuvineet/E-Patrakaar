@@ -4,57 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.ProfileFragment">
+    tools:context=".view.fragment.main.ProfileFragment">
 
     <ImageView
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tvAddName"
+        app:layout_constraintEnd_toStartOf="@id/ll"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/line2"
         android:layout_marginTop="15dp"
         android:id="@+id/ivImage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_baseline_person_24"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/my_account_filled"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="91dp"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/tvAddName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="150dp"
-        android:layout_marginBottom="5dp"
-        android:text="Add Name"
-        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvAddUsername"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivImage"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/tvAddUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Username"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/line2"
-        app:layout_constraintStart_toStartOf="@+id/ivImage"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddName"
-        tools:ignore="HardcodedText" />
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="5dp"
+            android:text="Akshat Bansal"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="?android:textColorPrimary"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="abansal11ae@gmail.com"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnEditInfo"
+            android:text="Edit Info"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/line2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="1.5dp"
+        android:layout_marginVertical="15dp"
         android:layout_marginHorizontal="10dp"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="9dp"
-        app:dividerColor="@color/grey"
+        app:dividerColor="@color/light_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivImage" />
+
+    <TextView
+        android:id="@+id/savedText"
+        android:text="Saved"
+        android:layout_marginEnd="300dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="?android:textColorPrimary"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/line3"
+        android:layout_width="38dp"
+        android:layout_height="1.5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginEnd="300dp"
+        app:dividerColor="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/savedText" />
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@id/line3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="0dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSaved"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:layout_marginHorizontal="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardMakeLibrary"
+                layout="@layout/custom_collection_item" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

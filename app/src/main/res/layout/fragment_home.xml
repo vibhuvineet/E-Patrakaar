@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".view.fragment.HomeFragment">
+    tools:context=".view.fragment.main.HomeFragment">
 
    <LinearLayout
        android:layout_width="match_parent"
@@ -20,7 +20,7 @@
            android:fontFamily="@font/poppins"
            android:letterSpacing="0.08"
            android:text="Trending News"
-           android:textColor="@color/black"
+           android:textColor="?android:textColorPrimary"
            android:textSize="18sp"
            android:textStyle="bold"
            tools:ignore="HardcodedText" />
@@ -41,7 +41,7 @@
         android:layout_marginTop="29dp"
         android:letterSpacing="0.08"
         android:text="Viral Updates"
-        android:textColor="@color/black"
+        android:textColor="?android:textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -63,7 +63,7 @@
         android:layout_marginTop="29dp"
         android:letterSpacing="0.08"
         android:text="Recommended Topics"
-        android:textColor="@color/black"
+        android:textColor="?android:textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -84,7 +84,7 @@
         android:layout_marginTop="29dp"
         android:letterSpacing="0.08"
         android:text="Channels"
-        android:textColor="@color/black"
+        android:textColor="?android:textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
