@@ -52,7 +52,8 @@ class ExpandedNewsFragment : Fragment() {
             viewLifecycleOwner
         ) {
             it?.let {
-                setRandomNewsResponseInUI(it.articles[0])
+                val random = (0..100).random()
+                setRandomNewsResponseInUI(it.articles[random])
                 progressBar.dismiss()
             }
         }
