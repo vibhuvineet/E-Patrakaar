@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.e_patrakaar.view.fragment.ui
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +20,7 @@ class ExpandedNewsFragment : Fragment() {
 
     //Changes for database
     private lateinit var randomNewsViewModel: RandomNewsViewModel
+    private lateinit var progressBar: ProgressDialog
 
 
     override fun onCreateView(
@@ -33,6 +37,9 @@ class ExpandedNewsFragment : Fragment() {
         //Changes for database
         randomNewsViewModel = ViewModelProvider(this)[RandomNewsViewModel::class.java]
         randomNewsViewModel.getNewsFromAPI()
+        progressBar = ProgressDialog(requireActivity())
+        progressBar.setMessage("Loading news..")
+        progressBar.show()
         randomNewsViewModelObserver()
 
     }
@@ -46,6 +53,7 @@ class ExpandedNewsFragment : Fragment() {
         ) {
             it?.let {
                 setRandomNewsResponseInUI(it.articles[0])
+                progressBar.dismiss()
             }
         }
 
@@ -60,7 +68,11 @@ class ExpandedNewsFragment : Fragment() {
             viewLifecycleOwner
         ){
             it?.let {
-
+                if (it){
+                    progressBar.show()
+                } else {
+                    progressBar.dismiss()
+                }
             }
         }
 
