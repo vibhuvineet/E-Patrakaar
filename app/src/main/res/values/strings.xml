@@ -10,4 +10,7 @@
     <string name="time">2 days ago</string>
     <string name="follow">Follow</string>
     <string name="notifications">Notifications</string>
+
+    <string name="notification_title">Checkout this new news</string>
+    <string name="notification_subtitle">Tap for more</string>
 </resources>
