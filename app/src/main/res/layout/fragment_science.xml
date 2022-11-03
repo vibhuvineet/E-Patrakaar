@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".view.fragment.leaderboard.HealthFragment">
+    tools:context=".view.fragment.leaderboard.ScienceFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHealthTop"
+            android:id="@+id/rvScienceTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -49,14 +49,14 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="29dp"
             android:letterSpacing="0.08"
-            android:text="Latest Technology"
+            android:text="Latest Science"
             android:textColor="?android:textColorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvLatestTechnology"
+            android:id="@+id/rvLatestScience"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -86,7 +86,7 @@
             android:color="@color/grey" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvLatestTechnology2"
+            android:id="@+id/rvLatestScience2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -128,7 +128,7 @@
             tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTopTen"
+            android:id="@+id/rvTopTenScience"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -149,7 +149,7 @@
             tools:ignore="HardcodedText" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRecentUpdates1"
+            android:id="@+id/rvRecentScienceUpdates1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -168,7 +168,7 @@
             android:color="@color/grey" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRecentUpdates2"
+            android:id="@+id/rvRecentScienceUpdates2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

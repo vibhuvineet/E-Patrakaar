@@ -4,8 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.e_patrakaar.view.fragment.leaderboard.HealthFragment
-import com.example.e_patrakaar.view.fragment.leaderboard.SportsFragment
+import com.example.e_patrakaar.view.fragment.leaderboard.*
 
 class LeaderboardPagerViewAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
@@ -20,6 +19,15 @@ class LeaderboardPagerViewAdapter(fragmentManager: FragmentManager, lifecycle: L
             }
             1 -> {
                 HealthFragment()
+            }
+            2 -> {
+                EntertainmentFragment()
+            }
+            3 -> {
+                ScienceFragment()
+            }
+            4 -> {
+                TechnologyFragment()
             }
             else -> {
                 Fragment()
