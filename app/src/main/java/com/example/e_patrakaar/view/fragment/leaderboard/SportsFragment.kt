@@ -53,7 +53,8 @@ class SportsFragment : Fragment() {
             viewLifecycleOwner
         ) {
             it?.let {
-                for (i in 11..21){
+                val random = (0..100).random()
+                for (i in random..random + 10){
                     val e = it.articles[i]
                     list.add(Collection(e.title, e.description, e.urlToImage))
                     setResponseInUI(list)
