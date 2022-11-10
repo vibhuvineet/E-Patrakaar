@@ -22,6 +22,8 @@ class ExpandedNewsFragment : Fragment() {
     private lateinit var randomNewsViewModel: RandomNewsViewModel
     private lateinit var progressBar: ProgressDialog
 
+    private lateinit var newsList: ArrayList<RandomNews.Article>
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

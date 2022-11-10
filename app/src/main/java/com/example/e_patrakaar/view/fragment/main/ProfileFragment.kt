@@ -34,7 +34,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         Glide.with(requireActivity()).load(R.drawable.pic).circleCrop().into(binding.ivImage)
 
         list = listOf(
