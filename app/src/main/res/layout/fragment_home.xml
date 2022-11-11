@@ -82,7 +82,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="29dp"
         android:letterSpacing="0.08"
-        android:text="Channels"
+        android:text="Browse Channels"
         android:textColor="?android:textColorPrimary"
         android:textSize="18sp"
         android:textStyle="bold"

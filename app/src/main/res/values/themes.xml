@@ -10,6 +10,7 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <item name="actionBarStyle">@font/el_messiri_semibold</item>
@@ -20,7 +21,7 @@
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat">
         <item name="android:fontFamily">@font/el_messiri_semibold</item>
         <item name="android:textColor">?android:textColorPrimary</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:letterSpacing">0.06</item>
     </style>
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">

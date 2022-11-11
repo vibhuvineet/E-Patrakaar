@@ -3,13 +3,11 @@ package com.example.e_patrakaar.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.CustomTrendingItemBinding
 import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.fragment.leaderboard.SportsFragment
@@ -21,7 +19,7 @@ class TrendingNewsAdapter(private val fragment: Fragment, private val list: List
     class ViewHolder(view: CustomTrendingItemBinding) : RecyclerView.ViewHolder(view.root) {
         val text: TextView = view.textView
         val image: ImageView = view.image
-        val card: CardView = view.card
+        val card: LinearLayout = view.card
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

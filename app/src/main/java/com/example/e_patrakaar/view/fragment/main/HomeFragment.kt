@@ -16,6 +16,7 @@ import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.adapter.ChannelAdapter
 import com.example.e_patrakaar.view.adapter.RecommendedAdapter
 import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
+import com.example.e_patrakaar.view.adapter.ViralAdapter
 import com.example.e_patrakaar.viewmodel.RandomNewsViewModel
 
 class HomeFragment : Fragment() {
@@ -41,7 +42,7 @@ class HomeFragment : Fragment() {
         binding.rvTrending.adapter = TrendingNewsAdapter(this@HomeFragment, list)
 
         binding.rvUpdates.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvUpdates.adapter = ChannelAdapter(this@HomeFragment, list)
+        binding.rvUpdates.adapter = ViralAdapter(this@HomeFragment, list)
 
         binding.rvRecommended.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         binding.rvRecommended.adapter = RecommendedAdapter(this@HomeFragment, list)
