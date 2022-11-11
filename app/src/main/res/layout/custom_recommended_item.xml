@@ -4,7 +4,8 @@
     android:layout_width="200sp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginVertical="8dp"
-    android:layout_marginHorizontal="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginStart="7dp"
     android:id="@+id/card"
     android:layout_height="wrap_content">
 
@@ -36,6 +37,7 @@
         <RelativeLayout
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="-7sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -48,7 +50,7 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="7dp"
                 android:text="Social Work"
-                android:textColor="?android:textColorPrimary"
+                android:textSize="13sp"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -63,7 +65,8 @@
                 android:padding="5dp"
                 android:text="@string/follow"
                 android:textColor="@color/white"
-                app:drawableEndCompat="@drawable/add_3" />
+                app:drawableEndCompat="@drawable/add_3"
+                tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
 

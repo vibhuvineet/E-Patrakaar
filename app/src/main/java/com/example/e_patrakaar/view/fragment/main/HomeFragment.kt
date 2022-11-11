@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.e_patrakaar.database.entity.RandomNews
+import com.example.e_patrakaar.R
 import com.example.e_patrakaar.databinding.FragmentHomeBinding
 import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.adapter.ChannelAdapter
@@ -37,7 +37,15 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private fun setResponseInUI(list: java.util.ArrayList<Collection>) {
+    private fun setResponseInUI(list: ArrayList<Collection>) {
+
+        //Dummy list for channels
+        val listChannel = ArrayList<Collection>()
+        listChannel.add(Collection("","", R.drawable.nine))
+        listChannel.add(Collection("","", R.drawable.ten))
+        listChannel.add(Collection("","", R.drawable.eleven))
+        listChannel.add(Collection("","", R.drawable.twelve))
+
         binding.rvTrending.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         binding.rvTrending.adapter = TrendingNewsAdapter(this@HomeFragment, list)
 
@@ -48,7 +56,7 @@ class HomeFragment : Fragment() {
         binding.rvRecommended.adapter = RecommendedAdapter(this@HomeFragment, list)
 
         binding.rvChannels.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvChannels.adapter = ChannelAdapter(this@HomeFragment, list)
+        binding.rvChannels.adapter = ChannelAdapter(this@HomeFragment, listChannel)
 
     }
 
