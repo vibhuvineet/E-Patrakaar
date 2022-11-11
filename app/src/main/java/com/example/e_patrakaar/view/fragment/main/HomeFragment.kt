@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.e_patrakaar.database.entity.RandomNews
 import com.example.e_patrakaar.databinding.FragmentHomeBinding
 import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.adapter.ChannelAdapter
@@ -61,6 +63,14 @@ class HomeFragment : Fragment() {
         list = ArrayList()
         randomNewsViewModelObserver()
 
+    }
+
+    fun newsDetails(news: Collection){
+        findNavController().navigate(
+            HomeFragmentDirections.actionNavigationHomeToNavigationExpandedNews(
+                news
+            )
+        )
     }
 
     //Changes for database

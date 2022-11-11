@@ -30,7 +30,7 @@ class RecommendedAdapter(private val fragment: Fragment, private val list: List<
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val news = list[position]
-        holder.text.text = news.text1
+        holder.text.text = news.title
         Glide.with(fragment).load(news.image).centerCrop().into(holder.image)
     }
 

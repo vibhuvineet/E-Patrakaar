@@ -46,5 +46,9 @@
         android:id="@+id/navigation_expanded_news"
         android:name="com.example.e_patrakaar.view.fragment.ui.ExpandedNewsFragment"
         android:label="@string/title"
-        tools:layout="@layout/fragment_expanded_news" />
+        tools:layout="@layout/fragment_expanded_news" >
+        <argument
+            android:name="Expanded_news_home"
+            app:argType="com.example.e_patrakaar.model.Collection" />
+    </fragment>
 </navigation>

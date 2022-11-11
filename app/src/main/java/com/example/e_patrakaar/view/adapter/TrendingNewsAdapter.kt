@@ -15,7 +15,8 @@ import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.fragment.leaderboard.SportsFragment
 import com.example.e_patrakaar.view.fragment.main.HomeFragment
 
-class TrendingNewsAdapter(private val fragment: Fragment, private val list: List<Collection>): RecyclerView.Adapter<TrendingNewsAdapter.ViewHolder>() {
+class TrendingNewsAdapter(private val fragment: Fragment, private val list: List<Collection>) :
+    RecyclerView.Adapter<TrendingNewsAdapter.ViewHolder>() {
 
     class ViewHolder(view: CustomTrendingItemBinding) : RecyclerView.ViewHolder(view.root) {
         val text: TextView = view.textView
@@ -24,20 +25,26 @@ class TrendingNewsAdapter(private val fragment: Fragment, private val list: List
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(CustomTrendingItemBinding.inflate(LayoutInflater.from(fragment.context), parent, false))
+        return ViewHolder(
+            CustomTrendingItemBinding.inflate(
+                LayoutInflater.from(fragment.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val news = list[position]
-        holder.text.text = news.text1
+        holder.text.text = news.title
         holder.card.setOnClickListener {
-            when(fragment){
-              is HomeFragment -> {
-                  fragment.findNavController().navigate(R.id.action_navigation_home_to_navigation_expanded_news)
-              }
-              is SportsFragment -> {
-                  fragment.findNavController().navigate(R.id.action_navigation_leaderboard_to_navigation_expanded_news)
-              }
+            when (fragment) {
+                is HomeFragment -> {
+                    fragment.newsDetails(news)
+                }
+                is SportsFragment -> {
+                    fragment.newsDetails(news)
+                }
             }
         }
         Glide.with(fragment).load(news.image).centerCrop().into(holder.image)

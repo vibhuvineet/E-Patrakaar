@@ -2,28 +2,19 @@
 
 package com.example.e_patrakaar.view.fragment.ui
 
-import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.example.e_patrakaar.database.entity.RandomNews
 import com.example.e_patrakaar.databinding.FragmentExpandedNewsBinding
-import com.example.e_patrakaar.viewmodel.RandomNewsViewModel
 
 class ExpandedNewsFragment : Fragment() {
 
     private lateinit var binding: FragmentExpandedNewsBinding
-
-    //Changes for database
-    private lateinit var randomNewsViewModel: RandomNewsViewModel
-    private lateinit var progressBar: ProgressDialog
-
-    private lateinit var newsList: ArrayList<RandomNews.Article>
-
+    private lateinit var newsDetails: com.example.e_patrakaar.model.Collection
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,61 +27,23 @@ class ExpandedNewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //Changes for database
-        randomNewsViewModel = ViewModelProvider(this)[RandomNewsViewModel::class.java]
-        randomNewsViewModel.getNewsFromAPI()
-        progressBar = ProgressDialog(requireActivity())
-        progressBar.setMessage("Loading news..")
-        progressBar.show()
-        randomNewsViewModelObserver()
+        setRandomNewsResponseInUI()
 
     }
 
+    private fun setRandomNewsResponseInUI() {
 
-    //Changes for database
-    private fun randomNewsViewModelObserver() {
-
-        randomNewsViewModel.randomNewsResponse.observe(
-            viewLifecycleOwner
-        ) {
-            it?.let {
-                val random = (0..100).random()
-                setRandomNewsResponseInUI(it.articles[random])
-                progressBar.dismiss()
-            }
-        }
-
-        randomNewsViewModel.randomNewsLoadingError.observe(
-            viewLifecycleOwner
-        ){
-            it?.let {
-
-            }
-        }
-        randomNewsViewModel.loadRandomNews.observe(
-            viewLifecycleOwner
-        ){
-            it?.let {
-                if (it){
-                    progressBar.show()
-                } else {
-                    progressBar.dismiss()
-                }
-            }
-        }
-
-    }
-
-    private fun setRandomNewsResponseInUI(article: RandomNews.Article) {
+        val args: ExpandedNewsFragmentArgs by navArgs()
+        newsDetails = args.expandedNewsHome
 
         Glide.with(requireActivity())
-            .load(article.urlToImage)
+            .load(newsDetails.image)
             .centerCrop()
             .into(binding.image)
 
-        binding.title.text = article.title
-        binding.description.text = article.description
-        binding.time.text = article.publishedAt
+        binding.title.text = newsDetails.title
+        binding.description.text = newsDetails.description
+        binding.time.text = newsDetails.publishedAt
 
     }
 }

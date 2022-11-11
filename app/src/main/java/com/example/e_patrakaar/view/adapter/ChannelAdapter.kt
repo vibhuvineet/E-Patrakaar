@@ -23,7 +23,7 @@ class ChannelAdapter(private val fragment: Fragment, private val list: List<Coll
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val city = list[position]
-        holder.text.text = city.text1
+        holder.text.text = city.title
         Glide.with(fragment).load(city.image).into(holder.image)
     }
 
