@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.e_patrakaar.databinding.FragmentSportsBinding
 import com.example.e_patrakaar.model.Collection
 import com.example.e_patrakaar.view.adapter.ChannelAdapter
+import com.example.e_patrakaar.view.adapter.CustomNewsAdapter
 import com.example.e_patrakaar.view.adapter.RecommendedAdapter
-import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
 import com.example.e_patrakaar.view.fragment.main.LeaderboardFragmentDirections
 import com.example.e_patrakaar.viewmodel.RandomNewsViewModel
 
@@ -56,7 +56,7 @@ class SportsFragment : Fragment() {
         ) {
             it?.let {
                 val random = (0..100).random()
-                for (i in random..random + 10){
+                for (i in random..random + 5){
                     val e = it.articles[i]
                     list.add(Collection(e.title, e.description, e.urlToImage))
                     setResponseInUI(list)
@@ -95,17 +95,8 @@ class SportsFragment : Fragment() {
     }
 
     private fun setResponseInUI(list: ArrayList<Collection>) {
-        binding.rvSports1.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvSports1.adapter = TrendingNewsAdapter(this@SportsFragment, list)
-
-        binding.rvSports2.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvSports2.adapter = TrendingNewsAdapter(this@SportsFragment, list)
-
-        binding.rvSports3.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvSports3.adapter = TrendingNewsAdapter(this@SportsFragment, list)
-
-        binding.rvSports4.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvSports4.adapter = TrendingNewsAdapter(this@SportsFragment, list)
+        binding.rvSports1.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvSports1.adapter = CustomNewsAdapter(this@SportsFragment, list)
 
         binding.rvTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
         binding.rvTop.adapter = ChannelAdapter(this@SportsFragment, list)
