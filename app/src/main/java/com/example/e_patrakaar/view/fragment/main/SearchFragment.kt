@@ -48,7 +48,7 @@ class SearchFragment : Fragment() {
             City("Mumbai", R.drawable.cityone),
             )
 
-        binding.rvCities.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+        binding.rvCities.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
 
         if (binding.tvViewMore.visibility == View.VISIBLE){
             binding.rvCities.adapter = CityAdapter(this@SearchFragment, list1)

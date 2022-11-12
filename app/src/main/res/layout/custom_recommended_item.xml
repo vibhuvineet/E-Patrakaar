@@ -19,7 +19,7 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:src="@drawable/like_outline"
-            android:layout_height="170dp"
+            android:layout_height="154dp"
             tools:ignore="ContentDescription" />
 
         <TextView
@@ -28,7 +28,7 @@
             tools:text="Random text is there you know that"
             android:layout_marginHorizontal="3dp"
             android:layout_marginTop="8dp"
-            android:gravity="center"
+            android:textSize="12dp"
             android:layout_gravity="bottom|center"
             android:textColor="?android:textColorPrimary"
             android:layout_width="wrap_content"
@@ -48,9 +48,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="3dp"
                 android:text="Social Work"
-                android:textSize="13sp"
+                android:textSize="8dp"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -65,6 +65,7 @@
                 android:padding="5dp"
                 android:text="@string/follow"
                 android:textColor="@color/white"
+                android:textSize="9dp"
                 app:drawableEndCompat="@drawable/add_3"
                 tools:ignore="RelativeOverlap" />
 
