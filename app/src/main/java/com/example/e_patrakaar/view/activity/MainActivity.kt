@@ -1,7 +1,6 @@
 package com.example.e_patrakaar.view.activity
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +11,7 @@ import com.example.e_patrakaar.R
 import com.example.e_patrakaar.database.notification.NotificationWorker
 import com.example.e_patrakaar.databinding.ActivityMainBinding
 import com.example.e_patrakaar.utils.Constants
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {

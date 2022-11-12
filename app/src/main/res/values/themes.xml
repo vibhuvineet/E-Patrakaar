@@ -16,6 +16,7 @@
         <item name="actionBarStyle">@font/el_messiri_semibold</item>
         <item name="android:fontFamily">@font/libre_franklin</item>
         <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/black</item>
     </style>
 
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat">
