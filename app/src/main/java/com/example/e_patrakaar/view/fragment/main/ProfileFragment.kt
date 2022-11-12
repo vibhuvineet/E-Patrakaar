@@ -37,11 +37,10 @@ class ProfileFragment : Fragment() {
         Glide.with(requireActivity()).load(R.drawable.pic).circleCrop().into(binding.ivImage)
 
         list = listOf(
-            Collection("Politics", "150 saved posts", R.drawable.cityone),
-            Collection("Sports", "200 saved posts", R.drawable.twelve),
-            Collection("Animals and Birds", "4 saved posts", R.drawable.citythree),
-            Collection("National", "23 saved posts", R.drawable.nine),
-            Collection("International", "46 saved posts", R.drawable.eleven),
+            Collection("Politics", "150 saved posts", R.drawable.protwo),
+            Collection("Sports", "200 saved posts", R.drawable.proone),
+            Collection("Animals and Birds", "4 saved posts", R.drawable.prothree),
+            Collection("Videos", "23 saved posts", R.drawable.profour),
         )
 
         binding.rvSaved.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
