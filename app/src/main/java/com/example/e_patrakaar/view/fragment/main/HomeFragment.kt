@@ -90,10 +90,18 @@ class HomeFragment : Fragment() {
         ) {
             it?.let {
                 val random = (0..100).random()
-                for (i in random..random + 10){
-                    val e = it.articles[i]
-                    list.add(Collection(e.title, e.description, e.urlToImage))
-                    setResponseInUI(list)
+                if (it.articles.size >= random + 10){
+                    for (i in random..random + 10){
+                        val e = it.articles[i]
+                        list.add(Collection(e.title, e.description, e.urlToImage))
+                        setResponseInUI(list)
+                    }
+                } else {
+                    for (i in random..random + 1){
+                        val e = it.articles[i]
+                        list.add(Collection(e.title, e.description, e.urlToImage))
+                        setResponseInUI(list)
+                    }
                 }
                 progressBar.dismiss()
             }

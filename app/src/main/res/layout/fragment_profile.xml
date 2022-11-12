@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="5dp"
-            android:text="Akshat Bansal"
+            android:text="Username"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="?android:textColorPrimary"
@@ -48,7 +48,7 @@
             android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="abansal11ae@gmail.com"
+            android:text="email ID"
             tools:ignore="HardcodedText" />
 
         <Button
