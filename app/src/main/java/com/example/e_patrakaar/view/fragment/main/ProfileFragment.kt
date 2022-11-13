@@ -7,6 +7,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
@@ -65,6 +66,10 @@ class ProfileFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         (activity as MainActivity).supportActionBar!!.title = binding.tvName.text
+
+        binding.btnEditInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_profile_to_navigation_edit_profile)
+        }
 
     }
 
