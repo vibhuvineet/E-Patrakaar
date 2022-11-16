@@ -1,61 +1,93 @@
 package com.example.e_patrakaar.view.fragment.leaderboard
 
+import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.e_patrakaar.databinding.FragmentHealthBinding
 import com.example.e_patrakaar.model.Collection
-import com.example.e_patrakaar.view.adapter.ChannelAdapter
-import com.example.e_patrakaar.view.adapter.RecommendedAdapter
-import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
-
+import com.example.e_patrakaar.view.adapter.CustomNewsAdapter
+import com.example.e_patrakaar.view.adapter.LatestTechAdapter
+import com.example.e_patrakaar.viewmodel.RandomNewsViewModel
 
 class HealthFragment : Fragment() {
 
     private lateinit var binding: FragmentHealthBinding
-    private lateinit var list: List<Collection>
+    private lateinit var list: ArrayList<Collection>
+
+    private lateinit var randomNewsViewModel: RandomNewsViewModel
+    private lateinit var progressBar: ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHealthBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        list = listOf(
-            Collection("one"),
-            Collection("two"),
-            Collection("three"),
-            Collection("four"),
-            Collection("five"),
-            Collection("six"),
-        )
-        binding.rvHealthTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvHealthTop.adapter = TrendingNewsAdapter(this@HealthFragment, list)
+        randomNewsViewModel = ViewModelProvider(this)[RandomNewsViewModel::class.java]
+        randomNewsViewModel.getNewsFromAPI()
+        progressBar = ProgressDialog(requireActivity())
+        progressBar.setMessage("Loading news..")
+        progressBar.show()
 
-        binding.rvLatestTechnology.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvLatestTechnology.adapter = TrendingNewsAdapter(this@HealthFragment, list)
+        list = ArrayList()
+        randomNewsViewModelObserver()
 
-        binding.rvLatestTechnology2.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvLatestTechnology2.adapter = TrendingNewsAdapter(this@HealthFragment, list)
+    }
 
-        binding.rvTopTen.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvTopTen.adapter = TrendingNewsAdapter(this@HealthFragment, list)
+    private fun randomNewsViewModelObserver() {
 
-        binding.rvRecentUpdates1.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvRecentUpdates1.adapter = ChannelAdapter(this@HealthFragment, list)
+        randomNewsViewModel.randomNewsResponse.observe(
+            viewLifecycleOwner
+        ) {
+            it?.let {
+                val random = (0..50).random()
+                for (i in random..random + 5){
+                    val e = it.articles[i]
+                    list.add(Collection(e.title, e.description, e.urlToImage))
+                    setResponseInUI(list)
+                }
+                progressBar.dismiss()
+            }
+        }
 
-        binding.rvRecentUpdates2.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvRecentUpdates2.adapter = RecommendedAdapter(this@HealthFragment, list)
+        randomNewsViewModel.randomNewsLoadingError.observe(
+            viewLifecycleOwner
+        ){
+            it?.let {
 
+            }
+        }
+        randomNewsViewModel.loadRandomNews.observe(
+            viewLifecycleOwner
+        ){
+            it?.let {
+                if (it){
+                    progressBar.show()
+                } else {
+                    progressBar.dismiss()
+                }
+            }
+        }
+
+    }
+
+    private fun setResponseInUI(list: ArrayList<Collection>) {
+        binding.rvHealthTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvHealthTop.adapter = CustomNewsAdapter(this@HealthFragment, list)
+
+        binding.rvLatestTechnology.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvLatestTechnology.adapter = LatestTechAdapter(this@HealthFragment, list)
     }
 
 }

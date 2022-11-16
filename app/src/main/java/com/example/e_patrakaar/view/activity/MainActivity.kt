@@ -1,14 +1,18 @@
 package com.example.e_patrakaar.view.activity
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.work.*
 import com.example.e_patrakaar.R
+import com.example.e_patrakaar.database.notification.NotificationWorker
 import com.example.e_patrakaar.databinding.ActivityMainBinding
+import com.example.e_patrakaar.utils.Constants
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,5 +44,34 @@ class MainActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
+
+        if (intent.hasExtra(Constants.NOTIFICATION_ID)){
+            val notificationId = intent.getIntExtra(Constants.NOTIFICATION_ID, 0)
+            binding.navView.selectedItemId = R.id.navigation_notification
+
+        }
+
+        startWork()
+
     }
+
+    private fun createConstraints() = Constraints.Builder()
+        .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+        .setRequiresCharging(false)
+        .setRequiresBatteryNotLow(true)
+        .build()
+
+    private fun createWorkRequest() =
+        PeriodicWorkRequestBuilder<NotificationWorker>(30, TimeUnit.SECONDS).setConstraints(
+            createConstraints()
+        ).build()
+
+
+    private fun startWork(){
+        WorkManager.getInstance(this)
+            .enqueueUniquePeriodicWork("News Notify Work",
+                ExistingPeriodicWorkPolicy.KEEP,
+                createWorkRequest())
+    }
+
 }

@@ -25,9 +25,9 @@ class CollectionAdapter(private val fragment: Fragment, private val list: List<C
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val collection = list[position]
-        holder.text.text = collection.text1
+        holder.text.text = collection.title
         Glide.with(fragment).load(collection.image).centerCrop().placeholder(R.drawable.add_2).into(holder.image)
-        holder.text2.text = collection.text2
+        holder.text2.text = collection.description
     }
 
     override fun getItemCount(): Int {

@@ -31,25 +31,24 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         list1 = listOf(
-            City("Delhi", R.drawable.pic),
-            City("Bangalore", R.drawable.pic),
-            City("Mumbai", R.drawable.pic),
-            City("Punjab", R.drawable.pic),
-            City("Haryana", R.drawable.pic),
+            City("Mumbai", R.drawable.cityone),
+            City("Delhi", R.drawable.citytwo),
+            City("Chennai", R.drawable.citythree),
+            City("Kolkata", R.drawable.cityfour),
         )
         list2 = listOf(
-            City("Delhi", R.drawable.pic),
-            City("Bangalore", R.drawable.pic),
-            City("Mumbai", R.drawable.pic),
-            City("Punjab", R.drawable.pic),
-            City("Haryana", R.drawable.pic),
-            City("UP", R.drawable.pic),
-            City("Bengal", R.drawable.pic),
-            City("Bihar", R.drawable.pic),
-            City("Kerala", R.drawable.pic),
+
+            City("Mumbai", R.drawable.cityone),
+            City("Delhi", R.drawable.citytwo),
+            City("Chennai", R.drawable.citythree),
+            City("Kolkata", R.drawable.cityfour),
+            City("Delhi", R.drawable.citytwo),
+            City("Kolkata", R.drawable.cityfour),
+            City("Chennai", R.drawable.citythree),
+            City("Mumbai", R.drawable.cityone),
             )
 
-        binding.rvCities.layoutManager = StaggeredGridLayoutManager(3, LinearLayoutManager.VERTICAL)
+        binding.rvCities.layoutManager = StaggeredGridLayoutManager(4, LinearLayoutManager.VERTICAL)
 
         if (binding.tvViewMore.visibility == View.VISIBLE){
             binding.rvCities.adapter = CityAdapter(this@SearchFragment, list1)

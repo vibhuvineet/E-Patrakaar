@@ -1,62 +1,93 @@
 package com.example.e_patrakaar.view.fragment.leaderboard
 
+import android.app.ProgressDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.e_patrakaar.databinding.FragmentEntertainmentBinding
-
 import com.example.e_patrakaar.model.Collection
-import com.example.e_patrakaar.view.adapter.ChannelAdapter
-import com.example.e_patrakaar.view.adapter.RecommendedAdapter
-import com.example.e_patrakaar.view.adapter.TrendingNewsAdapter
-
+import com.example.e_patrakaar.view.adapter.CustomNewsAdapter
+import com.example.e_patrakaar.view.adapter.LatestTechAdapter
+import com.example.e_patrakaar.viewmodel.RandomNewsViewModel
 
 class EntertainmentFragment : Fragment() {
 
     private lateinit var binding: FragmentEntertainmentBinding
-    private lateinit var list: List<Collection>
+    private lateinit var list: ArrayList<Collection>
+
+    private lateinit var randomNewsViewModel: RandomNewsViewModel
+    private lateinit var progressBar: ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentEntertainmentBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
+
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        list = listOf(
-            Collection("one"),
-            Collection("two"),
-            Collection("three"),
-            Collection("four"),
-            Collection("five"),
-            Collection("six"),
-        )
-        binding.rvEnterTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvEnterTop.adapter = TrendingNewsAdapter(this@EntertainmentFragment, list)
+        randomNewsViewModel = ViewModelProvider(this)[RandomNewsViewModel::class.java]
+        randomNewsViewModel.getNewsFromAPI()
+        progressBar = ProgressDialog(requireActivity())
+        progressBar.setMessage("Loading news..")
+        progressBar.show()
 
-        binding.rvLatestEnter.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvLatestEnter.adapter = TrendingNewsAdapter(this@EntertainmentFragment, list)
-
-        binding.rvLatestEnter2.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvLatestEnter2.adapter = TrendingNewsAdapter(this@EntertainmentFragment, list)
-
-        binding.rvTopTenEnter.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvTopTenEnter.adapter = TrendingNewsAdapter(this@EntertainmentFragment, list)
-
-        binding.rvRecentEnterUpdates1.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvRecentEnterUpdates1.adapter = ChannelAdapter(this@EntertainmentFragment, list)
-
-        binding.rvRecentEnterUpdates2.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.HORIZONTAL)
-        binding.rvRecentEnterUpdates2.adapter = RecommendedAdapter(this@EntertainmentFragment, list)
+        list = ArrayList()
+        randomNewsViewModelObserver()
 
     }
 
+    private fun randomNewsViewModelObserver() {
+
+        randomNewsViewModel.randomNewsResponse.observe(
+            viewLifecycleOwner
+        ) {
+            it?.let {
+                val random = (0..50).random()
+                for (i in random..random + 5){
+                    val e = it.articles[i]
+                    list.add(Collection(e.title, e.description, e.urlToImage))
+                    setResponseInUI(list)
+                }
+                progressBar.dismiss()
+            }
+        }
+
+        randomNewsViewModel.randomNewsLoadingError.observe(
+            viewLifecycleOwner
+        ){
+            it?.let {
+
+            }
+        }
+        randomNewsViewModel.loadRandomNews.observe(
+            viewLifecycleOwner
+        ){
+            it?.let {
+                if (it){
+                    progressBar.show()
+                } else {
+                    progressBar.dismiss()
+                }
+            }
+        }
+
+    }
+
+    private fun setResponseInUI(list: ArrayList<Collection>) {
+        binding.rvEnterTop.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvEnterTop.adapter = CustomNewsAdapter(this@EntertainmentFragment, list)
+
+        binding.rvLatestEnter.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
+        binding.rvLatestEnter.adapter = LatestTechAdapter(this@EntertainmentFragment, list)
+
+    }
 }

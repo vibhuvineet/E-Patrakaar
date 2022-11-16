@@ -7,6 +7,7 @@ import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.bumptech.glide.Glide
@@ -34,15 +35,13 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         Glide.with(requireActivity()).load(R.drawable.pic).circleCrop().into(binding.ivImage)
 
         list = listOf(
-            Collection("Politics", "150 saved posts", R.drawable.pic),
-            Collection("Sports", "200 saved posts", R.drawable.home_outline),
-            Collection("Animals and Birds", "4 saved posts", R.drawable.pic),
-            Collection("National", "23 saved posts", R.drawable.home_outline),
-            Collection("International", "46 saved posts", R.drawable.archive),
+            Collection("Politics", "150 saved posts", R.drawable.protwo),
+            Collection("Sports", "200 saved posts", R.drawable.proone),
+            Collection("Animals and Birds", "4 saved posts", R.drawable.prothree),
+            Collection("Videos", "23 saved posts", R.drawable.profour),
         )
 
         binding.rvSaved.layoutManager = StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL)
@@ -67,6 +66,10 @@ class ProfileFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         (activity as MainActivity).supportActionBar!!.title = binding.tvName.text
+
+        binding.btnEditInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_profile_to_navigation_edit_profile)
+        }
 
     }
 

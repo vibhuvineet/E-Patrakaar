@@ -26,28 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
-            android:letterSpacing="0.08"
-            android:text="Date:"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/line1_"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            android:color="@color/grey" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
+            android:layout_marginTop="12dp"
             android:letterSpacing="0.08"
             android:text="Latest Science"
             android:textColor="?android:textColorPrimary"
@@ -62,118 +41,6 @@
             android:layout_margin="5dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
-            android:letterSpacing="0.08"
-            android:text="Date:"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/line2_"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            android:color="@color/grey" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvLatestScience2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
-            android:letterSpacing="0.08"
-            android:text="Date:"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="14sp"
-            tools:ignore="HardcodedText" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/line3_"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            android:color="@color/grey" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
-            android:letterSpacing="0.08"
-            android:text="Top Ten"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvTopTenScience"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="29dp"
-            android:letterSpacing="0.08"
-            android:text="Recent Updates"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRecentScienceUpdates1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="4dp" />
-
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/line4_"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:color="@color/grey" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRecentScienceUpdates2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="15dp"
             android:layout_marginEnd="4dp" />
 
     </LinearLayout>

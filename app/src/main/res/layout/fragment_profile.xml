@@ -14,8 +14,8 @@
         app:layout_constraintBottom_toTopOf="@id/line2"
         android:layout_marginTop="15dp"
         android:id="@+id/ivImage"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="90dp"
+        android:layout_height="110dp"
         android:src="@drawable/my_account_filled"
         tools:layout_editor_absoluteX="26dp"
         tools:layout_editor_absoluteY="91dp"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="150dp"
             android:layout_marginBottom="5dp"
-            android:text="Akshat Bansal"
+            android:text="Username"
             android:textStyle="bold"
             android:textSize="18sp"
             android:textColor="?android:textColorPrimary"
@@ -48,12 +48,17 @@
             android:id="@+id/tvUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="abansal11ae@gmail.com"
+            android:text="email ID"
+            android:textSize="13sp"
+            android:textColor="?android:textColorPrimary"
             tools:ignore="HardcodedText" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEditInfo"
             android:text="Edit Info"
+            app:cornerRadius="10dp"
+            android:textSize="14sp"
+            android:padding="5dp"
             android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,7 +90,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textColor="?android:textColorPrimary"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />

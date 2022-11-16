@@ -34,21 +34,18 @@ class NotificationFragment : Fragment() {
 
     private fun dummyList(): List<Notification> {
         return listOf(
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification( "","Old news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification("", "Old news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification("","Old news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.pic, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
-            Notification(R.drawable.archive, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.cityone, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.twelve, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.citytwo, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.citythree,"Old news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.eleven, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.nine, "Old news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.cityfour, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.ten, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.eleven, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.nine, "Old news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.cityfour, "New news added.", "Sports", "1 min ago."),
+            Notification(R.drawable.ten, "New news added.", "Sports", "1 min ago."),
         )
     }
 

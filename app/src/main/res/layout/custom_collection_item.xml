@@ -13,8 +13,8 @@
         android:scaleType="centerCrop"
         android:background="@color/light_grey"
         android:src="@drawable/add_2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_toEndOf="@id/image"
         android:text="Make Library"
         android:textColor="?android:textColorPrimary"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
 
@@ -40,6 +40,7 @@
         android:layout_toEndOf="@id/image"
         android:text="Create more libraries"
         android:layout_gravity="center"
+        android:textSize="13sp"
         android:textColor="?android:textColorPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

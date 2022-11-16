@@ -40,11 +40,24 @@
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.e_patrakaar.view.fragment.main.ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_edit_profile"
+            app:destination="@id/navigation_edit_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_profile"
+        android:name="com.example.e_patrakaar.view.fragment.ui.EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
 
     <fragment
         android:id="@+id/navigation_expanded_news"
         android:name="com.example.e_patrakaar.view.fragment.ui.ExpandedNewsFragment"
         android:label="@string/title"
-        tools:layout="@layout/fragment_expanded_news" />
+        tools:layout="@layout/fragment_expanded_news" >
+        <argument
+            android:name="Expanded_news_home"
+            app:argType="com.example.e_patrakaar.model.Collection" />
+    </fragment>
 </navigation>
