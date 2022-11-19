@@ -15,7 +15,7 @@ import com.example.e_patrakaar.model.Notification
 class NotificationAdapter(private val fragment: Fragment, private val list: List<Notification>): RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
 
     class ViewHolder(view: CutsomNotificationItemBinding) : RecyclerView.ViewHolder(view.root) {
-        val notificationMessage: TextView = view.textView
+        val notifyMessage: TextView = view.textView
         val categoryNTime: TextView = view.categoryTime
         val image: ImageView = view.image
     }
@@ -27,7 +27,7 @@ class NotificationAdapter(private val fragment: Fragment, private val list: List
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val notification = list[position]
-        holder.notificationMessage.text = notification.notificationMessage
+        holder.notifyMessage.text = notification.notifyMessage
         holder.categoryNTime.text = "${notification.category}, ${notification.uploadTime}"
         Glide.with(fragment).load(notification.image).circleCrop().placeholder(R.drawable.comment_outline).into(holder.image)
     }
